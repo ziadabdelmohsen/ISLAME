@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+// ignore: must_be_immutable
 class ActiveNavBarIcon extends StatelessWidget {
   String iconName;
   ActiveNavBarIcon({super.key, required this.iconName});
