@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:islame/tabs/hadeth_tab.dart';
+import 'package:islame/tabs/quran_tab.dart';
+import 'package:islame/tabs/radio_tab.dart';
+import 'package:islame/tabs/sebha_tab.dart';
+import 'package:islame/tabs/time_tab.dart';
 import 'package:islame/widgets/active_nav_bar_icon.dart';
 import 'package:islame/widgets/inactive_nav_bar_icon.dart';
 
@@ -12,9 +17,17 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
+  List<Widget> tabs = [
+    QuranTab(),
+    HadethTab(),
+    SebhaTab(),
+    RadioTab(),
+    TimeTab(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: tabs[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (index) {
