@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class HadethTab extends StatelessWidget {
+class HadithTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(child: Text('hadeth'));
+    return Container(child: Text('hadith'));
   }
 }

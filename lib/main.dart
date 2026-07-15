@@ -13,7 +13,7 @@ class IslamiApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {HomeScreen.routeName: (context) => HomeScreen()},
+      routes: {HomeScreen.routeName: (_) => HomeScreen()},
       initialRoute: HomeScreen.routeName,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,

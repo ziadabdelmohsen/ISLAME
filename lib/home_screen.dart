@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islame/tabs/hadeth_tab.dart';
+import 'package:islame/tabs/hadith_tab.dart';
 import 'package:islame/tabs/quran_tab.dart';
 import 'package:islame/tabs/radio_tab.dart';
 import 'package:islame/tabs/sebha_tab.dart';
@@ -19,15 +19,43 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   List<Widget> tabs = [
     QuranTab(),
-    HadethTab(),
+    HadithTab(),
     SebhaTab(),
     RadioTab(),
     TimeTab(),
   ];
+  List<String> backgraundImagesName = [
+    'quran_background',
+    'hadith_background',
+    'sebha_background',
+    'radio_background',
+    'time_background',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: tabs[currentIndex],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              'assets/images/${backgraundImagesName[currentIndex]}.png',
+            ),
+            fit: BoxFit.fill,
+          ),
+        ),
+
+        child: Column(
+          crossAxisAlignment: .stretch,
+          children: [
+            Image.asset(
+              'assets/images/islami_header.png',
+              height: MediaQuery.sizeOf(context).height * 0.20,
+            ),
+
+            Expanded(child: tabs[currentIndex]),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (index) {
